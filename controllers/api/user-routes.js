@@ -1,11 +1,11 @@
 const router = require('express').Router();
+
 const { User, Post, Comment } = require('../../models');
+// const withAuth = require('../../utils/auth')
 
-
-//show all the info users
+// GET /api/users
 router.get('/', (req,res) => {
-    User.findAll({
-        //does not display passwords in json
+       User.findAll({        
         attributes: { exclude: ['password'] }
     })
         .then(dbUserData => res.json(dbUserData))
@@ -15,7 +15,7 @@ router.get('/', (req,res) => {
         });
 });
 
-// show all from a one user only
+// GET /api/users  by id 
 router.get('/:id', (req,res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -72,7 +72,7 @@ router.post('/', (req,res) => {
     });
 });
 
-// login user
+// Login user
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -101,7 +101,7 @@ router.post('/login', (req, res) => {
     });
 });
 
-// logout the user
+// log-out
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -112,9 +112,8 @@ router.post('/logout', (req, res) => {
     }
 })
 
-// PUT /api/users/1
-router.put('/:id', (req,res) => {    
-
+// PUT /api/users/ by id
+router.put('/:id', (req,res) => {
     // if req.body has exact key/value pairs to match the model, you can just use 'req.body' instead
     User.update(req.body, {
         individualHooks: true,
@@ -136,7 +135,7 @@ router.put('/:id', (req,res) => {
 });
 
 
-// DELETE /api/users/1
+// DELETE /api/users/ by id
 router.delete('/:id', (req, res) => {
 	Comment.destroy({
 		where : {
