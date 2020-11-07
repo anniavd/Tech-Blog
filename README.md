@@ -12,7 +12,7 @@ Tech Blog is an application where developers can post their technology knowledge
   
  ![Homepage](public/images/homepage.jpg)
  _____________________________________________________________________
- Visit the site! [Tech Blog](https:)
+ Visit the site! [Tech Blog](https://developertechblog.herokuapp.com/)
 
 
 
