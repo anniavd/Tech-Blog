@@ -37,26 +37,27 @@ Tech Blog is an application where developers can post their technology knowledge
 `DB_NAME='<database name>'`
 `DB_USER='root'`
 `DB_PW='password database'`
-- Open the project terminal from the server file and write the command` npm install  and then npm start. In the browser write 
-http: // localhost: 3001. 
+- Open the project terminal from the server file and write the command `npm install and then npm start`. In the browser write  `http: // localhost: 3001`. 
 
 
 # Usage 
 
-- When you open the application you can see the publications and select the one you want to see.
+- When you open the application you can see the publications with they comments and select the one you want to see.
 - To publish you need to click on login and sipnup if it is your 1st time with the app.
 - Once registered you can create publications, edit or delete from Dashboard.
-- In Home you can see the publications and comment on them.
 
 
 
-Screenshot for create a post
+
+Screenshot for create a post.
 
 ![create post](public/images/create-post.jpg)
 
+Screenshot for edit and delete a post.
 
+![create post](public/images/edit-post.jpg)
 
-Screenshot for add comments
+Screenshot for add comments.
 
 ![create comments](public/images/comment.jpg)
 
@@ -69,10 +70,10 @@ NONE
 * NODE
 * EXPRESS
 * MYSQL
-* SequelSEQUELIZE
+* SEQUELIZE
 * HANDLEBARS
-* bcrypt
-* dotenv
+* BCRYPT
+* DOTENV
 * HEROKU
 
 

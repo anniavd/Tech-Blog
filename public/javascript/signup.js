@@ -6,7 +6,7 @@ async function signupFormHandler(event) {
 	const password = document.querySelector('#password-signup').value.trim();
 
 	// if all signup fields are filled out, make POST request to api/users route to create new user
-	if (username && password) {
+	if (username && email && password) {
 		const response = await fetch('/api/users', {
 			method  : 'post',
 			body    : JSON.stringify({
@@ -22,7 +22,7 @@ async function signupFormHandler(event) {
 		if (response.ok) {
 			document.location.replace('/dashboard/');
 		} else {
-			alert(response.statusText);
+            alert('Need write a valid email and password with more than 3 characters.')
 		}
 	}
 }
